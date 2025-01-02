@@ -21,9 +21,8 @@ class Student extends Person {
   String grade;
   List<double> courseScores;
 
-  Student(String name, int age, String address, this.studentID, this.grade,
-      this.courseScores)
-      : super(name, age, address);
+  Student(super.name, super.age, super.address, this.studentID, this.grade,
+      this.courseScores);
 
   double calculateTheAverageScore() {
     double sum = courseScores.reduce((a, b) => a + b);
@@ -51,8 +50,7 @@ class Teacher extends Person {
   List<String> coursesTaught;
 
   Teacher(
-      String name, int age, String address, this.teacherID, this.coursesTaught)
-      : super(name, age, address);
+      super.name, super.age, super.address, this.teacherID, this.coursesTaught);
 
   @override
   void displayRole() {
